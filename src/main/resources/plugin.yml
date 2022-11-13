@@ -1,0 +1,11 @@
+name: InvisibleFrames
+version: '${project.version}'
+main: adhdmc.invisibleframes.InvisibleFrames
+api-version: 1.19
+prefix: "[ Invisible Frames ]"
+authors: [ _Rhythmic ]
+description: Allows easy toggling of item frames from visible to invisible
+permissions:
+  invisibleframes.toggleframes:
+    default: op
+    description: Allows user to toggle item frames between invisible, or visible
