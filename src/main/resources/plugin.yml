@@ -2,10 +2,17 @@ name: InvisibleFrames
 version: '${project.version}'
 main: adhdmc.invisibleframes.InvisibleFrames
 api-version: 1.18
-prefix: "[ Invisible Frames ]"
+prefix: "[Invisible Frames]"
 authors: [ _Rhythmic ]
 description: Allows easy toggling of item frames from visible to invisible
+commands:
+  ifreload:
+    permission: invisibleframes.reload
+    description: Reloads invisible frames config
 permissions:
   invisibleframes.toggleframes:
     default: op
     description: Allows user to toggle item frames between invisible, or visible
+  invisibleframes.reload:
+    default: op
+    description: Allows user to reload config

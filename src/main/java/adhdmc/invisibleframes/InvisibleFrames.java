@@ -1,6 +1,5 @@
 package adhdmc.invisibleframes;
 
-import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class InvisibleFrames extends JavaPlugin {
@@ -10,6 +9,7 @@ public final class InvisibleFrames extends JavaPlugin {
     @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(new ClickListener(), this);
+        this.getCommand("ifreload").setExecutor(new ReloadCommand());
         this.saveDefaultConfig();
         getConfig().addDefault("lock-frame", true);
         getConfig().addDefault("toggle-empty", false);
