@@ -10,10 +10,18 @@ commands:
   ifreload:
     permission: invisibleframes.reload
     description: Reloads invisible frames config
+  iftoggle:
+    permission: invisibleframes.command.iftoggle, invisibleframes.other.command.iftoggle
 permissions:
   invisibleframes.toggleframes:
     default: op
     description: Allows user to toggle item frames between invisible, or visible
+  invisibleframes.command.iftoggle:
+    default: op
+    description: Allows user to toggle whether crouch-right-click will set item frames invisible or not
+  invisibleframes.other.command.iftoggle:
+    default: op
+    description: Allows user to toggle another player's setting for whether crouch-right-click will set item frames invisible or not
   invisibleframes.reload:
     default: op
     description: Allows user to reload config
