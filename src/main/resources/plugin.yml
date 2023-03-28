@@ -5,7 +5,9 @@ api-version: 1.18
 prefix: "[Invisible Frames]"
 authors: [ _Rhythmic ]
 description: Allows easy toggling of item frames from visible to invisible
-softdepend: ["ItemsAdder", "Denizen"]
+softdepend:
+  - "ItemsAdder"
+  - "Denizen"
 commands:
   ifreload:
     permission: invisibleframes.reload
