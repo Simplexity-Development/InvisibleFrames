@@ -17,16 +17,13 @@ public class ClickListener implements Listener {
     public void onItemFrameInteract(PlayerInteractEntityEvent event) {
         FileConfiguration config = InvisibleFrames.getInstance().getConfig();
         if (event.getHand().equals(EquipmentSlot.OFF_HAND)) return;
-
         Player player = event.getPlayer();
         if (!player.isSneaking()) return;
-
         Entity entity = event.getRightClicked();
         if (!(entity instanceof ItemFrame itemFrame)) return;
         if (itemFrame.getItem().getType().equals(Material.AIR) && !config.getBoolean("toggle-empty", false)) return;
         if (InvisibleFrames.getInstance().getItemsAdder().isCustomStack(itemFrame.getItem())) return;
         if (!player.hasPermission("invisibleframes.toggleframes")) return;
-
         event.setCancelled(true);
         itemFrame.setVisible(!itemFrame.isVisible());
         if (config.getBoolean("lock-frame", true)) {

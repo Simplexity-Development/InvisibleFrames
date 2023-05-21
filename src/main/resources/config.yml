@@ -1,6 +1,3 @@
 #mmmmmmmm
 lock-frame: true
 toggle-empty: false
-#Denizen Tags
-ignore-items-tagged:
-  #- ElementTag

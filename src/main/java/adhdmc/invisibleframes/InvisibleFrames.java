@@ -12,8 +12,6 @@ public final class InvisibleFrames extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new ClickListener(), this);
         this.getCommand("ifreload").setExecutor(new ReloadCommand());
         this.saveDefaultConfig();
-        getConfig().addDefault("lock-frame", true);
-        getConfig().addDefault("toggle-empty", false);
         instance = this;
         try {
             Class.forName("dev.lone.itemsadder.api.CustomBlock");
