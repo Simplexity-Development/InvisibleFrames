@@ -1,7 +1,6 @@
-package adhdmc.invisibleframes;
+package simplexity.invisibleframes;
 
-import org.bukkit.Material;
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
@@ -22,12 +21,11 @@ public class ClickListener implements Listener {
         if (!(entity instanceof ItemFrame itemFrame)) return;
         if (!player.hasPermission("invisibleframes.toggleframes")) return;
         FrameToggleEvent frameToggleEvent = new FrameToggleEvent(itemFrame, player);
+        Bukkit.getServer().getPluginManager().callEvent(frameToggleEvent);
         if (frameToggleEvent.isCancelled()) return;
-        frameToggleEvent.checkBlacklist();
-        frameToggleEvent.checkItemsAdder();
+        frameToggleEvent.runAllChecks();
         if (frameToggleEvent.isCancelled()) return;
         playerInteractEntityEvent.setCancelled(true);
         frameToggleEvent.toggleFrame();
-
     }
 }

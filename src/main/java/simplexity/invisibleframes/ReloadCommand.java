@@ -1,6 +1,6 @@
-package adhdmc.invisibleframes;
+package simplexity.invisibleframes;
 
-import adhdmc.invisibleframes.util.ConfigHandler;
+import simplexity.invisibleframes.util.ConfigHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

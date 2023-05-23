@@ -1,13 +1,13 @@
 name: InvisibleFrames
 version: '${project.version}'
-main: adhdmc.invisibleframes.InvisibleFrames
+main: simplexity.invisibleframes.InvisibleFrames
 api-version: 1.18
-prefix: "[Invisible Frames]"
+prefix: "Invisible Frames"
 authors: [ _Rhythmic ]
+website: https://github.com/Simplexity-Development/InvisibleFrames
 description: Allows easy toggling of item frames from visible to invisible
 softdepend:
   - "ItemsAdder"
-  - "CoreProtect"
 commands:
   ifreload:
     permission: invisibleframes.reload

@@ -1,4 +1,4 @@
-package adhdmc.invisibleframes.hooks;
+package simplexity.invisibleframes.hooks;
 
 import org.bukkit.inventory.ItemStack;
 

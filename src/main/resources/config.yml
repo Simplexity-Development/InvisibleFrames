@@ -1,5 +1,7 @@
 #Locking the item frame while it is invisible will prevent people from being able to leave a ton of invisible item frames around. It will also make the item frames be unaffected by physics (float/won't be broken until un-fixed)
 lock-frame: true
-#
+#Whether empty item frames should be able to be set invisible
+toggle-empty: false
+#These items must be declared how they would be if you were using /give in vanilla minecraft
 blacklisted-items:
-  - "minecraft:air"
+  #- "minecraft:iron_nugget{CustomModelData:1111}"
