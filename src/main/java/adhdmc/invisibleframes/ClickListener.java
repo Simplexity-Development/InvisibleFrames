@@ -14,22 +14,20 @@ import org.bukkit.inventory.EquipmentSlot;
 public class ClickListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
-    public void onItemFrameInteract(PlayerInteractEntityEvent event) {
-        FileConfiguration config = InvisibleFrames.getInstance().getConfig();
-        if (event.getHand().equals(EquipmentSlot.OFF_HAND)) return;
-        Player player = event.getPlayer();
+    public void onItemFrameInteract(PlayerInteractEntityEvent playerInteractEntityEvent) {
+        if (playerInteractEntityEvent.getHand().equals(EquipmentSlot.OFF_HAND)) return;
+        Player player = playerInteractEntityEvent.getPlayer();
+        Entity entity = playerInteractEntityEvent.getRightClicked();
         if (!player.isSneaking()) return;
-        Entity entity = event.getRightClicked();
         if (!(entity instanceof ItemFrame itemFrame)) return;
-        if (itemFrame.getItem().getType().equals(Material.AIR) && !config.getBoolean("toggle-empty", false)) return;
-        if (InvisibleFrames.getInstance().getItemsAdder().isCustomStack(itemFrame.getItem())) return;
         if (!player.hasPermission("invisibleframes.toggleframes")) return;
-        event.setCancelled(true);
-        itemFrame.setVisible(!itemFrame.isVisible());
-        if (config.getBoolean("lock-frame", true)) {
-            itemFrame.setFixed(!itemFrame.isFixed());
-        } else {
-            itemFrame.setFixed(false);
-        }
+        FrameToggleEvent frameToggleEvent = new FrameToggleEvent(itemFrame, player);
+        if (frameToggleEvent.isCancelled()) return;
+        frameToggleEvent.checkBlacklist();
+        frameToggleEvent.checkItemsAdder();
+        if (frameToggleEvent.isCancelled()) return;
+        playerInteractEntityEvent.setCancelled(true);
+        frameToggleEvent.toggleFrame();
+
     }
 }

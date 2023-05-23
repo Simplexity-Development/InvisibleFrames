@@ -1,5 +1,6 @@
 package adhdmc.invisibleframes;
 
+import adhdmc.invisibleframes.util.ConfigHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,6 +18,7 @@ public class ReloadCommand implements CommandExecutor, TabCompleter {
             return false;
         }
         InvisibleFrames.getInstance().reloadConfig();
+        ConfigHandler.getInstance().reloadConfig();
         commandSender.sendMessage("[InvisibleFrames] Configuration Reloaded");
         return true;
     }

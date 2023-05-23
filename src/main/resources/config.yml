@@ -1,3 +1,5 @@
-#mmmmmmmm
+#Locking the item frame while it is invisible will prevent people from being able to leave a ton of invisible item frames around. It will also make the item frames be unaffected by physics (float/won't be broken until un-fixed)
 lock-frame: true
-toggle-empty: false
+#
+blacklisted-items:
+  - "minecraft:air"

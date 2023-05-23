@@ -7,7 +7,7 @@ authors: [ _Rhythmic ]
 description: Allows easy toggling of item frames from visible to invisible
 softdepend:
   - "ItemsAdder"
-  - "Denizen"
+  - "CoreProtect"
 commands:
   ifreload:
     permission: invisibleframes.reload
