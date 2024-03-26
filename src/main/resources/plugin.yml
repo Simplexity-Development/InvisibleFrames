@@ -6,6 +6,7 @@ prefix: "Invisible Frames"
 authors: [ _Rhythmic ]
 website: https://github.com/Simplexity-Development/InvisibleFrames
 description: Allows easy toggling of item frames from visible to invisible
+folia-supported: true
 softdepend:
   - "ItemsAdder"
 commands:
